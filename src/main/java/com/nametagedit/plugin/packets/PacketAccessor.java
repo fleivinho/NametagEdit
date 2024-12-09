@@ -16,7 +16,7 @@ class PacketAccessor {
     protected static final String CRAFT_BUKKIT_PACKAGE = Bukkit.getServer().getClass().getPackage().getName();
     protected static final String VERSION = Bukkit.getBukkitVersion().split("-")[0];
     protected static final int MINOR_VERSION = Integer.parseInt(VERSION.split("\\.")[1]);
-    protected static final int PATCH_VERSION = Integer.parseInt(VERSION.split("\\.")[2]);
+    protected static final int PATCH_VERSION = VERSION.split("\\.").length > 2? Integer.parseInt(VERSION.split("\\.")[2]): 0;
 
     private static final List<String> legacyVersions = Arrays.asList(
             "1.7.2", "1.7.4", "1.7.5", "1.7.6", "1.7.7", "1.7.8", "1.7.9", "1.7.10",
